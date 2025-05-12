@@ -27,7 +27,7 @@ const NotificationContents = () => {
         </div> 
           <span className='text-xs text-gray-400'>5 days ago</span>
         </div>
-        <span className='flex-1 align-bottom w-50'>text</span>
+        <span className='flex-1 align-bottom w-50 bd'>text</span>
     </div>
 
     <div className='flex flex-column items-center mt-2 p-2 rounded-lg'>
