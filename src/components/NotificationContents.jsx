@@ -1,26 +1,29 @@
 import React from 'react'
-import AvatarMark from '../assets/avatar-mark-webber.webp'
 import { notifications } from '../Constants'
 
 
 const NotificationContents = () => {
   return (
     <>
-      {notifications.map(({id, name, text, post, image, isRead, msgContent, time}) => {
-        return <div key={id} id={id} className='mt-1'>
-          <div className='flex p-2 gap-2 rounded-md bg-sky-100/50'>
-            <div className='notification_image'><img className='size-6' src={AvatarMark} alt="Profile" /></div>
+      {notifications.map(({id, name, text, post, image, read, msgContent, time, sideImg}) => 
+        (
+        <div key={id} id={id} className='mt-1' >
+          <div className={`flex p-2 gap-2 rounded-md ${read ? "bg-sky-100/50" : "bg-white"} md: `}>
+            <div className='notification_image'><img className='size-6' src={image} alt="Profile" /></div>
             <div className='flex-1 items-center justify-around leading-[10px]'>
-              <div className=''>
+              <div className=' flex justify-between items-center'>
                 <p className='flex items-center text-[7px] text-gray-400'>
-                  <span className='text-[8px] font-bold text-black hover:text-blue-700 hover:cursor-pointer mr-[2px]'>
-                    {name} </span>
+                  <span className='text-[7px] text-nowrap font-bold text-black hover:text-blue-700 hover:cursor-pointer mr-[2px]'>
+                    {name} </span> 
                   {text}
                   <span className='text-[7px] font-bold text-gray-500 hover:cursor-pointer ml-1 hover:text-blue-700'>
                     {post}
                   </span>
-                  {isRead === false ? (<div className='size-1 rounded-lg bg-red-700 ml-[2px]' />) : null}
+                  {read === true ? (<span className='size-1 rounded-lg bg-red-700 ml-[2px]' ></span>) : null}
                 </p>
+                <div>
+                  {sideImg && <img className='size-6 hover:cursor-pointer' src={sideImg}/>}
+                </div>
               </div>
               <div>
                 <span className='text-[8px] text-gray-400'>{time}</span>
@@ -30,8 +33,8 @@ const NotificationContents = () => {
               </div>
             </div>
           </div>
-        </div>
-      }
+        </div>)
+      
       )}
     </>
   )

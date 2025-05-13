@@ -1,14 +1,12 @@
- import AvatarMark from './assets/avatar-mark-webber.webp'
- import AvatarAngela from './assets/avatar-angela-gray.webp'
- import AvatarJacob from './assets/avatar-jacob-thompson.webp'
- import AvatarRizky from './assets/avatar-rizky-hasanuddin.webp'
- import AvatarKimberly from './assets/avatar-kimberly-smith.webp'
- import AvatarNathan from './assets/avatar-nathan-peterson.webp'
- import AvatarAnna from './assets/avatar-anna-kim.webp'
- import CommentedPicture from "./assets/image-chess.webp"
+ import AvatarMark from './assets/images/avatar-mark-webber.webp'
+ import AvatarAngela from './assets/images/avatar-angela-gray.webp'
+ import AvatarJacob from './assets/images/avatar-jacob-thompson.webp'
+ import AvatarRizky from './assets/images/avatar-rizky-hasanuddin.webp'
+ import AvatarKimberly from './assets/images/avatar-kimberly-smith.webp'
+ import AvatarNathan from './assets/images/avatar-nathan-peterson.webp'
+ import AvatarAnna from './assets/images/avatar-anna-kim.webp'
+ import CommentedPicture from "./assets/images/image-chess.webp"
  
-
- console.log(AvatarAngela,AvatarMark)
  export const notifications =  
   [
     {
@@ -16,7 +14,7 @@
       "name": "Mark Webber",
       "text": "reacted to your recent post",
       "post": "My first tournament today!",
-      "isRead": false,
+      "read": true,
       "time": "1m ago",
       "image": AvatarMark
     },
@@ -25,7 +23,7 @@
       "name": "Angela Gray",
       "text": "",
       "post": "followed you",
-      "isRead": false,
+      "read": true,
       "time": "5m ago",
       "image": AvatarAngela
     },
@@ -34,7 +32,7 @@
       "name": "jacob Thompson",
       "text": " has joined your group",
       "post": "Chess Club",
-      "isRead": false,
+      "read": true,
       "time": "1 day ago",
       "image": AvatarJacob
     },
@@ -44,7 +42,7 @@
       "text": "sent you a private message",
       "post": "",
       "msgContent":" Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game.",
-      "isRead": true,
+      "read": false,
       "time": "5 days ago ",
       "image": AvatarRizky
     },
@@ -53,16 +51,17 @@
       "name": "Kimberly Smith",
       "text": "",
       "post": " commented on your picture",
-      "isRead": true,
+      "read": false,
       "time": "1 week ago",
-      "image": AvatarKimberly
+      "image": AvatarKimberly,
+      "sideImg": CommentedPicture
     },
     {
       "id": 6,
       "name": "Nathan Peterson",
       "text": "reacted to your recent Post",
       "post": "5 end-game strategies to increase your win rate",
-      "isRead": true,
+      "read": false,
       "time": "2 weeks ago",
       "image": AvatarNathan
     },
@@ -71,7 +70,7 @@
       "name": "Anna Kim",
       "text": "left the group",
       "post": "Chess Club",
-      "isRead": true,
+      "read": false,
       "time": "2 weeks ago",
       "image": AvatarAnna
     }
