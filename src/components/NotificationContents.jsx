@@ -1,78 +1,39 @@
 import React from 'react'
-import NotificationContent from './NotificationContent'
 import AvatarMark from '../assets/avatar-mark-webber.webp'
-import AvatarAngela from '../assets/avatar-angela-gray.webp'
-import AvatarJacob from '../assets/avatar-jacob-thompson.webp'
-import AvatarRizky from '../assets/avatar-rizky-hasanuddin.webp'
-import AvatarKimberly from '../assets/avatar-kimberly-smith.webp'
-import AvatarNathan from '../assets/avatar-nathan-peterson.webp'
-import AvatarAnna from '../assets/avatar-anna-kim.webp'
-import CommentedPicture from "../assets/image-chess.webp"
+import { notifications } from '../Constants'
+
 
 const NotificationContents = () => {
   return (
-    <div className='mt-5'>
-      <NotificationContent name="Mark Webber" img={AvatarMark} text=" reacted to your recent post" post="My first tournament today!" time="1m ago"/>
-      <NotificationContent name="Angela Gray" img={AvatarAngela} text=" followed you" time="5m ago"/>
-      <NotificationContent name="Jacob Thompson" img={AvatarJacob} text="has joined your group" post="Chess Club" time="1 day ago"/>
-      
-      <div className='flex items-center mt-2 p-2 rounded-lg'>
-        <div>
-          <img src={AvatarRizky} alt="Avatar Image" className='size-10 mr-5'/>
+    <>
+      {notifications.map(({id, name, text, post, image, isRead, msgContent, time}) => {
+        return <div key={id} id={id} className='mt-1'>
+          <div className='flex p-2 gap-2 rounded-md bg-sky-100/50'>
+            <div className='notification_image'><img className='size-6' src={AvatarMark} alt="Profile" /></div>
+            <div className='flex-1 items-center justify-around leading-[10px]'>
+              <div className=''>
+                <p className='flex items-center text-[7px] text-gray-400'>
+                  <span className='text-[8px] font-bold text-black hover:text-blue-700 hover:cursor-pointer mr-[2px]'>
+                    {name} </span>
+                  {text}
+                  <span className='text-[7px] font-bold text-gray-500 hover:cursor-pointer ml-1 hover:text-blue-700'>
+                    {post}
+                  </span>
+                  {isRead === false ? (<div className='size-1 rounded-lg bg-red-700 ml-[2px]' />) : null}
+                </p>
+              </div>
+              <div>
+                <span className='text-[8px] text-gray-400'>{time}</span>
+              </div>
+              <div className='mt-1'>
+                {msgContent && (<p className='text-[8px] text-gray-700 border p-2 hover:cursor-pointer'>{msgContent}</p>)}
+              </div>
+            </div>
+          </div>
         </div>
-        <div>
-        <div className='flex items-center justify-between w-50'>
-            <h3 className='font-bold hover:cursor-pointer hover:text-blue-700 text-xs'>Rizky Hassanuddin</h3>
-            <p className='ml-1 text-gray-600'> sent you a private message</p>
-        </div> 
-          <span className='text-xs text-gray-400'>5 days ago</span>
-        </div>
-        <span className='flex-1 align-bottom w-50 bd'>text</span>
-    </div>
-
-    <div className='flex flex-column items-center mt-2 p-2 rounded-lg'>
-      <div>
-        <img src={AvatarKimberly} alt="Avatar Image" className='size-10 mr-5'/>
-      </div>
-      <div className=' flex justify-between '>
-      <div className='flex-1 items-center justify-between w-90'>
-        <div className='flex items-center justify-between w-50'>
-            <h3 className='font-bold hover:cursor-pointer hover:text-blue-700 text-xs'>Kimberly Smith</h3>
-            <p className='ml-1 text-gray-600'> commented on your picture</p>
-        </div>
-          <img className='size-8' src={CommentedPicture} alt="commented picture" />
-      </div> 
-        <span className='text-xs text-gray-400'>5 days ago</span>
-      </div>
-    </div>
-    
-    <div className='flex items-center mt-2 p-2 rounded-lg'>
-      <div>
-        <img src={AvatarNathan} alt="Avatar Image" className='size-10 mr-5'/>
-      </div>
-      <div>
-      <div className='flex items-center justify-between w-50'>
-          <h3 className='font-bold hover:cursor-pointer hover:text-blue-700 text-xs w-40'>Nathan Peterson</h3>
-          <p className='ml-1 text-gray-600 text-sm'> reacted to your reccent post 5 <b>end-game strategies to increase your win rate</b></p>
-      </div> 
-        <span className='text-xs text-gray-400'>5 days ago</span>
-      </div>
-    </div>
-
-
-    <div className='flex items-center mt-2 p-2 rounded-lg'>
-      <div>
-        <img src={AvatarAnna} alt="Avatar Image" className='size-10 mr-5'/>
-      </div>
-      <div>
-      <div className='flex items-center justify-between w-90'>
-          <h3 className='font-bold hover:cursor-pointer hover:text-blue-700 text-xs'>Anna Kim</h3>
-          <p className='ml-1 text-gray-600'> left the group <b className='font-bold hover:cursor-pointer hover:text-blue-700 text-sm'>Chess Club</b> </p>
-      </div> 
-        <span className='text-xs text-gray-400'>5 days ago</span>
-      </div>
-    </div>
-    </div>
+      }
+      )}
+    </>
   )
 }
 
