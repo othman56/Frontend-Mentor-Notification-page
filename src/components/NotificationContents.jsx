@@ -1,5 +1,5 @@
 import React from 'react'
-import { notifications } from '../Constants'
+import { notifications } from '../constants'
 
 
 const NotificationContents = () => {

@@ -1,7 +1,7 @@
 import React from 'react'
 import NotificationHeader from './NotificationHeader'
 import NotificationContents from './NotificationContents'
-import {notifications } from '../Constants'
+import {notifications} from '../constants'
 
 
 const NotificationWrapper = () => {
