@@ -1,17 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import NotificationHeader from './NotificationHeader'
 import NotificationContents from './NotificationContents'
-import {notifications} from '../constants'
+import { notificationsData } from '../constants'
 
 
 const NotificationWrapper = () => {
-  const {id, name, text, post, msgContent, read, image, time, sideImg} = notifications
-  
+  const [notifications, setNotifications] = useState(notificationsData)
+  const { id, name, text, post, msgContent, read, image, time, sideImg } = notifications
+
+  const markAllAsRead = () => {
+    setNotifications((prevNotificationState) => prevNotificationState.map((notification) => (
+      { ...notification, read: true }
+    )))
+  }
+  const toggleReadNotification = (id) => {
+    setNotifications((prevNotificationState) =>
+    prevNotificationState.map((notification) =>
+    notification.id === id ?
+    { ...notification, read: !notification.read } : notification))
+  }
+
+  const unReadCount = notifications.filter((notification) => !notification.read).length
 
   return (
-    <div  className='bg-white shadow-xl rounded-lg mt-6 p-5 w-6/12 md:w-50'>
-      <NotificationHeader />
-      <NotificationContents id={id} name={name} text={text} post={post} read={read} msgContent={msgContent} image={image} time={time} sideImg={sideImg}/>
+    <div className='bg-white flex flex-col shadow-xl w-60 rounded-lg mt-2 p-5 md:w-6/12 md:mt-6'>
+      <NotificationHeader markAllAsRead={markAllAsRead} unReadCount={unReadCount} />
+      <NotificationContents notifications={notifications} toggleReadNotification={toggleReadNotification} />
 
     </div>
   )

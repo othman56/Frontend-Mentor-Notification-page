@@ -7,14 +7,14 @@
  import AvatarAnna from './assets/images/avatar-anna-kim.webp'
  import CommentedPicture from "./assets/images/image-chess.webp"
  
- export const notifications =  
+ export const notificationsData =  
   [
     {
       "id": 1,
       "name": "Mark Webber",
       "text": "reacted to your recent post",
       "post": "My first tournament today!",
-      "read": true,
+      "read": false,
       "time": "1m ago",
       "image": AvatarMark
     },
@@ -23,7 +23,7 @@
       "name": "Angela Gray",
       "text": "",
       "post": "followed you",
-      "read": true,
+      "read": false,
       "time": "5m ago",
       "image": AvatarAngela
     },
@@ -32,7 +32,7 @@
       "name": "jacob Thompson",
       "text": " has joined your group",
       "post": "Chess Club",
-      "read": true,
+      "read": false,
       "time": "1 day ago",
       "image": AvatarJacob
     },
@@ -42,7 +42,7 @@
       "text": "sent you a private message",
       "post": "",
       "msgContent":" Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game.",
-      "read": false,
+      "read": true,
       "time": "5 days ago ",
       "image": AvatarRizky
     },
@@ -51,7 +51,7 @@
       "name": "Kimberly Smith",
       "text": "",
       "post": " commented on your picture",
-      "read": false,
+      "read": true,
       "time": "1 week ago",
       "image": AvatarKimberly,
       "sideImg": CommentedPicture
@@ -61,7 +61,7 @@
       "name": "Nathan Peterson",
       "text": "reacted to your recent Post",
       "post": "5 end-game strategies to increase your win rate",
-      "read": false,
+      "read": true,
       "time": "2 weeks ago",
       "image": AvatarNathan
     },
