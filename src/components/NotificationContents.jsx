@@ -17,7 +17,7 @@ const NotificationContents = ({notifications, toggleReadNotification}) => {
                   <span className='text-wrap text-[7px] font-bold text-gray-500 hover:cursor-pointer ml-1 hover:text-blue-700'>
                     {post}
                   </span>
-                  {read === false ? (<span className='size-1 rounded-lg bg-red-700 ml-[2px]' ></span>) : null}
+                  {read === false ? (<span className='size-4 rounded-lg bg-red-700 ml-[2px]' ></span>) : null}
                 </p>
                 <div>
                   {sideImg && <img className='size-6 hover:cursor-pointer' src={sideImg}/>}
