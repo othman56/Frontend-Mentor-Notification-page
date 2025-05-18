@@ -23,7 +23,7 @@ const NotificationWrapper = () => {
   const unReadCount = notifications.filter((notification) => !notification.read).length
 
   return (
-    <div className='bg-white flex flex-col shadow-xl mx-auto w-90 rounded-lg mt-2 p-2 md:p-5 md:w-6/12 md:mt-6'>
+    <div className='bg-white flex flex-col shadow-xl mx-auto w-11/12 rounded-lg mt-2 p-2 md:p-5 md:w-6/12 md:mt-6'>
       <NotificationHeader markAllAsRead={markAllAsRead} unReadCount={unReadCount} />
       <NotificationContents notifications={notifications} toggleReadNotification={toggleReadNotification} />
 
