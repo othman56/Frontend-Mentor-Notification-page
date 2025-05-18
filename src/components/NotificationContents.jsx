@@ -10,14 +10,14 @@ const NotificationContents = ({notifications, toggleReadNotification}) => {
             <div className='notification_image'><img className='size-6' src={image} alt="Profile" /></div>
             <div className='flex-1 items-center justify-around leading-[10px]'>
               <div className=' flex justify-between items-center'>
-                <p className='items-center text-[6px] md:text-[7px] text-gray-400 md:text-nowrap md:flex'>
+                <p className='items-center text-[8px] md:text-[8px] text-gray-400 md:text-nowrap md:flex'>
                   <span className='text-[7px] text-nowrap font-bold text-black hover:text-blue-700 hover:cursor-pointer mr-[2px]'>
                     {name} </span> 
                   {text}
                   <span className='text-wrap text-[7px] font-bold text-gray-500 hover:cursor-pointer ml-1 hover:text-blue-700'>
                     {post}
                   </span>
-                  {read === false ? (<span className='size-4 rounded-lg bg-red-700 ml-[2px]' ></span>) : null}
+                  {read === false ? (<span className='size-1 rounded-lg bg-red-700 ml-[2px]' ></span>) : null}
                 </p>
                 <div>
                   {sideImg && <img className='size-6 hover:cursor-pointer' src={sideImg}/>}
